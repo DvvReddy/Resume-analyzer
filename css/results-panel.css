@@ -1,0 +1,236 @@
+/* css/results-panel.css */
+
+/* Loading state */
+.rp-loading {
+  margin-top: 1rem;
+  padding: 1.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: #e5e7eb; /* slate-200 */
+}
+
+.rp-loading-spinner {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* Error */
+.rp-error {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(248, 113, 113, 0.8); /* rose-400 */
+  background-color: rgba(76, 5, 25, 0.7);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: #fee2e2; /* rose-100 */
+}
+
+/* Placeholder when no result yet */
+.rp-placeholder {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: #9ca3af; /* slate-400 */
+}
+
+/* Results container */
+.rp-results {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: rp-fade-in-up 0.25s ease-out;
+}
+
+@keyframes rp-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main score row */
+.rp-main-score-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.rp-score-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.rp-score-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.rp-score-number {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #34d399; /* emerald-400 */
+}
+
+.rp-score-outof {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.rp-score-level-row {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+.rp-score-level-value {
+  font-weight: 500;
+  color: #6ee7b7; /* emerald-300 */
+}
+
+.rp-score-bar-wrapper {
+  flex: 1;
+}
+
+.rp-score-bar-bg {
+  height: 0.5rem;
+  width: 100%;
+  border-radius: 999px;
+  background-color: #1f2937; /* slate-800 */
+  overflow: hidden;
+}
+
+.rp-score-bar-fill {
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    #f97373,
+    #f59e0b,
+    #22c55e
+  ); /* rose-400 → amber-500 → emerald-500 */
+  transition: width 0.5s ease-out;
+}
+
+.rp-score-hint {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  text-align: right;
+}
+
+/* Dimensions grid */
+.rp-dimensions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.rp-dim-card {
+  border-radius: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.85); /* slate-900 */
+  border: 1px solid #1f2937;
+  padding: 0.5rem 0.75rem;
+}
+
+.rp-dim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.rp-dim-label {
+  color: #e5e7eb;
+}
+
+.rp-dim-value {
+  color: #f9fafb;
+  font-weight: 500;
+}
+
+.rp-dim-bar-bg {
+  height: 0.35rem;
+  border-radius: 999px;
+  background-color: #1f2937;
+  overflow: hidden;
+}
+
+.rp-dim-bar-fill {
+  height: 100%;
+  background-color: #22c55e;
+  transition: width 0.5s ease-out;
+}
+
+/* Strengths & gaps */
+.rp-strengths-gaps-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .rp-strengths-gaps-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.rp-list-card {
+  border-radius: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid #1f2937;
+  padding: 0.5rem 0.75rem;
+}
+
+.rp-list-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  margin-bottom: 0.4rem;
+}
+
+.rp-list {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: disc;
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
+
+.rp-list li + li {
+  margin-top: 0.25rem;
+}
+
+/* Timeline card */
+.rp-timeline-card {
+  border-radius: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid #1f2937;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+.rp-timeline-title {
+  font-weight: 500;
+  margin-top: 0.25rem;
+  margin-bottom: 0.15rem;
+}
+
+.rp-timeline-title:first-of-type {
+  margin-top: 0;
+}
+
+.rp-timeline-text {
+  color: #d1d5db;
+  margin-bottom: 0.4rem;
+}
